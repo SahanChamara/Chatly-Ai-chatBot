@@ -13,40 +13,78 @@ dropItem2.addEventListener("click", (e) => {
 });
 
 
+// get time
+let hour = new Date().getHours();
+let minute = new Date().getMinutes();
+
+let time = hour + ":" + "" + minute;
+
+
+
+
 // sender 1 and two
 let chatList = [];
 
-function send() {       
-    let inputChat = document.getElementById("inputChat").value;   
-    let sendBtn = senderButton.value;  
+async function send() {
+    let inputChat = document.getElementById("inputChat").value;
+    let sendBtn = senderButton.value;
 
-    chatList.push(inputChat,sendBtn); 
-     
-    if (sendBtn == "Sender 1") {        
-        document.getElementById("setChat").innerHTML+=`<div class="d-flex flex-row justify-content-end mb-4 pt-1">
-              <div>                
-                <p class="small p-2 me-3 mb-1 text-white rounded-3 bg-primary">${inputChat}</p>
-                <p class="small me-3 mb-3 rounded-3 text-muted d-flex justify-content-end">00:06</p>
-              </div>
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp"
-                alt="avatar 1" style="width: 45px; height: 100%;">
-            </div>`
-    }else{
-    document.getElementById("setChat").innerHTML+=` <div class="d-flex flex-row justify-content-start">
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp"
-                alt="avatar 1" style="width: 45px; height: 100%;">
-              <div>                
-                <p class="small p-2 ms-3 mb-1 rounded-3 bg-body-tertiary">${inputChat}</p>
-                <p class="small ms-3 mb-3 rounded-3 text-muted">23:58</p>
-              </div>
-            </div>`
+    chatList.push(inputChat, sendBtn);
 
-    }
+    let returnResult = await aiRespone(inputChat)
+
+    // if (sendBtn == "Sender 1") {
+        document.getElementById("setChat").innerHTML += `<div class="d-flex flex-row justify-content-end mb-4 pt-1">
+  <div>
+    <p class="small p-2 me-3 mb-1 text-dark rounded-3 bg-tech-message">${inputChat}</p>
+    <p class="small me-3 mb-3 rounded-3 text-light d-flex justify-content-end">${time}</p>
+  </div>
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" 
+       alt="avatar 1" class="avatar-dark">
+</div>`
+    // } else {
+        document.getElementById("setChat").innerHTML += ` <div class="d-flex flex-row justify-content-start mb-4 pt-1">
+  <div>
+    <p class="small p-2 me-3 mb-1 text-dark rounded-3 bg-tech-message">${returnResult}</p>
+    <p class="small me-3 mb-3 rounded-3 text-light d-flex justify-content-end">${time}</p>
+  </div>
+  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava6-bg.webp" 
+       alt="avatar 1" class="avatar-dark">
+</div>`
+
+    // }
+};
 
 
+// fetching chat API
+async function aiRespone(inputChat) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
+    const raw = JSON.stringify({
+        "contents": [
+            {
+                "parts": [
+                    {
+                        "text": inputChat
+                    }
+                ]
+            }
+        ]
+    });
 
+    const requestOptions = {
+        method: "POST",
+        headers: myHeaders,
+        body: raw,
+        redirect: "follow"
+    };
 
+    let response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBG5kYLrjr_H6nWrw1FljHY-F190Y8wtnw", requestOptions)
+    let result = await response.json()
+    let returnResult = result.candidates[0].content.parts[0].text
+
+    return returnResult;
 }
 
 
