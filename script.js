@@ -80,7 +80,7 @@ async function aiRespone(inputChat) {
         redirect: "follow"
     };
 
-    let response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBG5kYLrjr_H6nWrw1FljHY-F190Y8wtnw", requestOptions)
+    let response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=", requestOptions)
     let result = await response.json()
     let returnResult = result.candidates[0].content.parts[0].text
 
