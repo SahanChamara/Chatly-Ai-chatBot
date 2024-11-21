@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <div class="container py-5">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-6">
+              <div class="card chat-card">
+                <div class="card-header d-flex justify-content-between align-items-center p-3 bg-gradient">
+                    <div class="btn-group m-1 ">
+                        <input type="button" id="senderButton" class="btn btn-danger dropdown-toggle"
+                            data-bs-toggle="dropdown" aria-expanded="false" value="Select Sender">
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="dropItem1" href="#">Sender 1</a></li>
+                            <li><a class="dropdown-item" id="dropItem2" href="#">Sender 2</a></li>
+                        </ul>
+                    </div>
+                  <h5 class="mb-0 text-white">Chat</h5>
+                  <button type="button" class="btn btn-chat">
+                    Chatly
+                  </button>
+                </div>
+                <div class="card-body chat-body" style="position: relative; height: 400px;">
+                  <!-- Chat messages here -->
+                  <!-- Add chat messages here -->
+                  <div id="setChat">
+
+                  </div>
+                </div>
+                <div class="card-footer d-flex justify-content-start align-items-center p-3">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3-bg.webp" 
+                       alt="avatar 3" class="avatar">
+                  <input type="text" class="form-control chat-input"  id="inputChat" placeholder="Type message">
+                  <a class="ms-3 text-muted icon-hover" href="#!"><i class="fas fa-paperclip"></i></a>
+                  <a class="ms-3 text-muted icon-hover" href="#!"><i class="fas fa-smile"></i></a>
+                  <a class="ms-3 icon-hover" href="#!"><i class="fas fa-paper-plane"></i></a>
+                  <button type="button" class="btn btn-danger m-1" onclick="send()">Send</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center m-2 p-2 text">Chatly</h1>
+
+                <div class="btn-group m-1 ">
+                    <input type="button" id="senderButton" class="btn btn-danger dropdown-toggle"
+                        data-bs-toggle="dropdown" aria-expanded="false" value="Select Sender">/
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" id="dropItem1" href="#">Sender 1</a></li>
+                        <li><a class="dropdown-item" id="dropItem2" href="#">Sender 2</a></li>
+                    </ul>
+                </div>
+                <div id="setChat">
+
+                </div>
+
+
+
+
+                <div class="col">
+                    <div class="mb-3 d-flex">
+                        <label for="exampleFormControlInput1" class="form-label"></label>
+                        <input type="email" class="form-control" id="inputChat" placeholder="Type your text here...">
+                        <button type="button" class="btn btn-danger m-1" onclick="send()">Send</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div> -->
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
