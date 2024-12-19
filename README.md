@@ -1,6 +1,6 @@
-# NewAssit AI Chat Bot
+# NeoAssit AI Chat Bot
 
-NewAssit is an AI-powered chatbot designed to assist users with their queries in a conversational manner. The project is developed using cutting-edge technologies to provide a seamless and intelligent chat experience.
+NeoAssit is an AI-powered chatbot designed to assist users with their queries in a conversational manner. The project is developed using cutting-edge technologies to provide a seamless and intelligent chat experience.
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
@@ -11,15 +11,15 @@ NewAssit is an AI-powered chatbot designed to assist users with their queries in
 - [License](#license)
 
 ## Technologies Used
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Node.js (Optional, if you have a server-side component)
-- **AI Framework**: OpenAI API / Google AI Studio (or any other AI service you use)
+- **Frontend**: HTML, CSS
+- **Backend**: JavaScript
+- **AI Framework**: Google AI Studio
 - **Version Control**: Git, GitHub
 
 ## Features
 - **Natural Language Processing (NLP)**: Handles user queries and responds in real time.
-- **Customizable Responses**: Ability to add custom responses for different types of queries.
-- **Integration with AI**: Uses AI models for understanding and responding to user input.
+- **Customizable Responses**: Ability to add custom responses for different queries.
+- **Integration with AI**: Uses AI models to understand and respond to user input.
 - **User-friendly Interface**: A clean and easy-to-use interface built with HTML and CSS.
 - **Responsive Design**: Works across various devices, including desktop and mobile.
 
@@ -30,7 +30,7 @@ NewAssit is an AI-powered chatbot designed to assist users with their queries in
    git clone https://github.com/your-username/NewAssit-AI-Chat-Bot.git
 
 ## Usage
-Once the project is running, simply open the index.html file in your browser. You can start chatting with the bot by typing your questions in the input field, and it will respond based on its AI models.
+Once the project runs, open the index.html file in your browser. You can start chatting with the bot by typing your questions in the input field, and it will respond based on its AI models.
 
 ## Contributing
 Feel free to fork the repository, make changes, and submit pull requests. Contributions are always welcome!
